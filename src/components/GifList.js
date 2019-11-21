@@ -1,14 +1,14 @@
 import React from 'react';
 
-export default class GifList extends React.Component {
-    constructor(){
-        super()
-        this.state = {}
-    }
+const GifList = props => {
 
-    render() {
-        return(
-            <p> HI </p>
-        )
-    }
+    return(
+        <ul>
+            {props.gifs.map(gifData => {
+                return <li><img src={gifData.url}/></li>
+            })}
+        </ul>
+    )
 }
+
+export default GifList;

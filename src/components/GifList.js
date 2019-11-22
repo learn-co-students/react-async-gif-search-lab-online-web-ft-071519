@@ -2,16 +2,16 @@ import React from 'react'
 
 class GifList extends React.Component {
 
-    renderGif = () => {
-        this.props.urls.forEach(url =>{
-            return <li><img src={url} alt=""/></li>
-            })
+    renderGifs = () => {
+        console.log(this.props.urlsArray)
+        return this.props.urlsArray.map((url, i) => {
+            return <li><img src={url} alt={i} key={i}/></li>
+        })
     }
     
-
     render(){
         return(
-        <ul>{this.renderGif()}</ul>
+        <ul>{this.renderGifs()}</ul>
         )
     }
 }
